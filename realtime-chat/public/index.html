@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Chat en tiempo real</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-gradient"></div>
+
+  <div class="chat-wrapper">
+    <header class="chat-header">
+      <div class="chat-title">
+        <span class="dot dot-green"></span>
+        <h1>Realtime Chat</h1>
+      </div>
+      <span class="status-pill">Online</span>
+    </header>
+
+    <main class="chat-main">
+      <aside class="user-panel">
+        <h2>Tu nombre</h2>
+        <input
+          type="text"
+          id="username"
+          placeholder="Escribe tu nombre..."
+        />
+        <button id="joinBtn">Entrar</button>
+        <p class="hint">Primero elige un nombre para unirte.</p>
+      </aside>
+
+      <section class="chat-section">
+        <ul id="messages" class="messages"></ul>
+
+        <form id="form" class="input-area">
+          <input
+            id="input"
+            autocomplete="off"
+            placeholder="Escribe un mensaje..."
+          />
+          <button>Enviar</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
